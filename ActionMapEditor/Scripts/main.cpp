@@ -1,5 +1,6 @@
 #include "Definition.h"
 #include "Dev/Function.h"
+#include "Dev/InputManager.h"
 #include "DxLib.h"
 
 int WINAPI WinMain( _In_ HINSTANCE hInstance, _In_opt_ HINSTANCE hPrevInstance, _In_ LPSTR lpCmdLine, _In_ int nCmdShow ) {
@@ -11,6 +12,7 @@ int WINAPI WinMain( _In_ HINSTANCE hInstance, _In_opt_ HINSTANCE hPrevInstance, 
     SetDrawScreen( DX_SCREEN_BACK );
 
     auto function = Function::CreateInstance();
+    auto inputManager = InputManager::CreateInstance();
 
     while ( true ) {
         // FPS固定
@@ -20,7 +22,8 @@ int WINAPI WinMain( _In_ HINSTANCE hInstance, _In_opt_ HINSTANCE hPrevInstance, 
         if ( ProcessMessage() == -1 ) break;
         if ( CheckKeyInput( KEY_INPUT_ESCAPE ) == 1 ) break;
 
-        // マウス入力更新
+        // 入力更新
+        inputManager->Update();
 
         // 描画しているものを削除
         ClearDrawScreen();
@@ -36,8 +39,10 @@ int WINAPI WinMain( _In_ HINSTANCE hInstance, _In_opt_ HINSTANCE hPrevInstance, 
     }
 
     // ファイナライズ
-    Function::DestoroyInstance();
+    inputManager = nullptr;
     function = nullptr;
+    InputManager::DestoroyInstance();
+    Function::DestoroyInstance();
 
     DxLib_End();
     return 0;
