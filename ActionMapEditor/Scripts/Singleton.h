@@ -9,36 +9,28 @@ class Singleton {
     virtual ~Singleton() {}
 
    public:
+    // インスタンスを生成する
     static T* CreateInstance() {
-        if ( Instance == nullptr ) {
-            Instance = new T();
-        }
-
-        return Instance;
+        instance = new T();
+        return instance;
     }
 
+    // インスタンスを削除する
     static void DestoroyInstance() {
-        delete Instance;
-        Instance = nullptr;
+        delete instance;
+        instance = nullptr;
     }
 
+    // インスタンスを取得する
     static T* GetInstance() {
-        if ( Instance == nullptr ) {
-            return CreateInstance();
-        }
-
-        return Instance;
-    }
-
-    static bool IsNull() {
-        return Instance == nullptr;
+        return ( instance == nullptr ) ? CreateInstance() : instance;
     }
 
    private:
-    static T* Instance;
+    static T* instance;
 };
 
 template<class T>
-T* Singleton<T>::Instance = nullptr;
+T* Singleton<T>::instance = nullptr;
 
 #endif  // !SINGLETON_H

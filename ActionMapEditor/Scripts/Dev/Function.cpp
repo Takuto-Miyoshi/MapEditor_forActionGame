@@ -1,6 +1,6 @@
 #include "Function.h"
 
-#include "Definition.h"
+#include "../Definition.h"
 
 Function::Function() :
     progressTime( 0.0 ) {

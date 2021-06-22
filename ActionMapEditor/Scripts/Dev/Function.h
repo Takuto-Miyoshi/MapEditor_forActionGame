@@ -1,13 +1,12 @@
 #ifndef FUNCTION_H
 #define FUNCTION_H
 
+#include "../Singleton.h"
 #include "DxLib.h"
-#include "Singleton.h"
 
 class Function : public Singleton<Function> {
    public:
     Function();
-
     virtual ~Function() {};
 
    public:
