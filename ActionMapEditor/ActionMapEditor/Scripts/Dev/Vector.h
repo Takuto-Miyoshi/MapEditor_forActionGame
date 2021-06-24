@@ -1,4 +1,4 @@
-#ifndef VECTOR_H
+﻿#ifndef VECTOR_H
 #define VECTOR_H
 
 #include <math.h>
@@ -44,21 +44,13 @@ struct Vector2 {
 
 #pragma region operator override
     Vector2 operator+( Vector2 vector ) const { return { point.GetX() + vector.point.GetX(), point.GetY() + vector.point.GetY() }; }
-
     Vector2 operator-( Vector2 vector ) const { return { point.GetX() - vector.point.GetX(), point.GetY() - vector.point.GetY() }; }
-
     Vector2 operator*( auto value ) const { return { point.GetX() * value, point.GetY() * value }; }
-
     Vector2 operator/( auto value ) const { return { point.GetX() / value, point.GetY() / value }; }
-
     void operator+=( Vector2 vector ) { point.Set( point.GetX() + vector.GetX(), point.GetY() + vector.GetY() ); }
-
     void operator-=( Vector2 vector ) { point.Set( point.GetX() - vector.GetX(), point.GetY() - vector.GetY() ); }
-
     void operator*=( auto value ) { point.Set( point.GetX() * value, point.GetY() * value ); }
-
     void operator/=( auto value ) { point.Set( point.GetX() / value, point.GetY() / value ); }
-
     bool operator==( Vector2 vector ) { return ( point.GetX() == vector.GetX() && point.GetY() == vector.GetY() ); }
 #pragma endregion
 

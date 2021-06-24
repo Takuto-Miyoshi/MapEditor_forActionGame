@@ -3,7 +3,7 @@
 #include "DxLib.h"
 
 InputManager::InputManager() {
-    for ( int i = 0; i < NUMBER_of_MOUSE_BUTTON_EXAMINE; i++ ) {
+    for ( int i = 0; i < MOUSE_BUTTON_MAX; i++ ) {
         currentMouseState[i] = false;
         previousMouseState[i] = false;
         mouseState[i] = InputState::NoInput;
@@ -17,7 +17,7 @@ void InputManager::Update() {
     currentMouseState[MOUSE_RIGHT] = ( ( GetMouseInput() & MOUSE_INPUT_RIGHT ) != 0 ) ? true : false;
 
     // 前の状態と比較して入力状態を更新
-    for ( int i = 0; i < NUMBER_of_MOUSE_BUTTON_EXAMINE; i++ ) {
+    for ( int i = 0; i < MOUSE_BUTTON_MAX; i++ ) {
         // 今回入力している
         if ( currentMouseState[i] == true ) {
             mouseState[i] = ( previousMouseState[i] == true ) ? InputState::Pressing : InputState::Pressed;

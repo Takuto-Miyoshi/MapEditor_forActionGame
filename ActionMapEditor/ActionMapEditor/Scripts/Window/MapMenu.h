@@ -5,6 +5,14 @@
 
 namespace GeneralWindow {
     class MapMenu : public Window {
+       public:
+        MapMenu();
+        ~MapMenu() {}
+
+       public:
+        void Draw();
+
+       private:
     };
 }  // namespace GeneralWindow
 

@@ -35,21 +35,13 @@ struct Size {
 
 #pragma region operator override
     Size operator+( Size size ) const { return { x + size.x, y + size.y }; }
-
     Size operator-( Size size ) const { return { x - size.x, y - size.y }; }
-
     Size operator*( auto value ) const { return { x * value, y * value }; }
-
     Size operator/( auto value ) const { return { x / value, y / value }; }
-
     void operator+=( Size size ) { Set( x + size.x, y + size.y ); }
-
     void operator-=( Size size ) { Set( x - size.x, y - size.y ); }
-
     void operator*=( auto value ) { Set( x * value, y * value ); }
-
     void operator/=( auto value ) { Set( x / value, y / value ); }
-
     bool operator==( Size size ) { return ( x == size.x && y == size.y ); }
 #pragma endregion
 

@@ -5,6 +5,14 @@
 
 namespace GeneralWindow {
     class Tab : public Window {
+       public:
+        Tab();
+        ~Tab() {}
+
+       public:
+        void Draw();
+
+       private:
     };
 }  // namespace GeneralWindow
 

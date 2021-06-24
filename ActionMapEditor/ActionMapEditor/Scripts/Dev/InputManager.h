@@ -33,9 +33,9 @@ class InputManager : public Singleton<InputManager> {
     bool GetMouseButtonState( int name, InputState state ) { return mouseState[name] == state; }
 
    private:
-    InputState mouseState[NUMBER_of_MOUSE_BUTTON_EXAMINE];
-    bool currentMouseState[NUMBER_of_MOUSE_BUTTON_EXAMINE];
-    bool previousMouseState[NUMBER_of_MOUSE_BUTTON_EXAMINE];
+    InputState mouseState[MOUSE_BUTTON_MAX];
+    bool currentMouseState[MOUSE_BUTTON_MAX];
+    bool previousMouseState[MOUSE_BUTTON_MAX];
 };
 
 #endif  // !INPUT_MANAGER_H

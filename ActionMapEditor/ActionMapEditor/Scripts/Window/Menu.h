@@ -5,6 +5,14 @@
 
 namespace GeneralWindow {
     class Menu : public Window {
+       public:
+        Menu();
+        ~Menu() {}
+
+       public:
+        void Draw();
+
+       private:
     };
 }  // namespace GeneralWindow
 

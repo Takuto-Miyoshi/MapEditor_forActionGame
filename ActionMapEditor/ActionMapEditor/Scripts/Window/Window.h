@@ -13,9 +13,9 @@ namespace GeneralWindow {
         Window( Point point_, Size size_, int color_ );
         virtual ~Window() {}
 
-        void Draw();
+        virtual void Draw() = 0;
 
-       private:
+       protected:
         Point point;
         Size size;
         int color;
