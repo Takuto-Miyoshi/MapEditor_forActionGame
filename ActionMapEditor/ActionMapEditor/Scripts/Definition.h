@@ -1,8 +1,9 @@
-#ifndef DEFINITION_H
+﻿#ifndef DEFINITION_H
 #define DEFINITION_H
 
-const int WINDOW_WIDTH = 640;
-const int WINDOW_HEIGHT = 480;
+#include "Dev/Size.h"
+
+const Size WINDOW_SIZE( 1280, 720 );
 const int FPS = 30;
 
 namespace Input {

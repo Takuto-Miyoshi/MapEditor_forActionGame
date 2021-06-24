@@ -1,18 +1,20 @@
-#include "Definition.h"
+﻿#include "Definition.h"
 #include "Dev/Function.h"
 #include "Dev/InputManager.h"
 #include "DxLib.h"
+#include "Scene/MainScene.h"
 
 int WINAPI WinMain( _In_ HINSTANCE hInstance, _In_opt_ HINSTANCE hPrevInstance, _In_ LPSTR lpCmdLine, _In_ int nCmdShow ) {
     SetOutApplicationLogValidFlag( FALSE );
+    SetGraphMode( WINDOW_SIZE.GetX(), WINDOW_SIZE.GetY(), 32, FPS );
     ChangeWindowMode( TRUE );
-    SetGraphMode( WINDOW_WIDTH, WINDOW_HEIGHT, 24, FPS );
     SetMainWindowText( "Map Editor for Action Games" );
     if ( DxLib_Init() == -1 ) return -1;
     SetDrawScreen( DX_SCREEN_BACK );
 
     auto function = Function::CreateInstance();
     auto inputManager = InputManager::CreateInstance();
+    auto mainScene = MainScene::CreateInstance();
 
     while ( true ) {
         // FPS固定
@@ -30,6 +32,7 @@ int WINAPI WinMain( _In_ HINSTANCE hInstance, _In_opt_ HINSTANCE hPrevInstance, 
         clsDx();
 
         // 処理
+        mainScene->Update();
 
         // 描画
         ScreenFlip();
@@ -39,8 +42,10 @@ int WINAPI WinMain( _In_ HINSTANCE hInstance, _In_opt_ HINSTANCE hPrevInstance, 
     }
 
     // ファイナライズ
+    mainScene = nullptr;
     inputManager = nullptr;
     function = nullptr;
+    MainScene::DestoroyInstance();
     InputManager::DestoroyInstance();
     Function::DestoroyInstance();
 

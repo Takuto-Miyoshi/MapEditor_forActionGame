@@ -1,0 +1,80 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Dev">
+      <UniqueIdentifier>{ea120800-1892-45ba-acb4-a1df2e2af36a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Scene">
+      <UniqueIdentifier>{e7c95b52-4725-42a8-94d7-01b2b4d046e1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Window">
+      <UniqueIdentifier>{b2a6b859-5d7f-4e0c-9c1c-5080f8c02704}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="Scripts\main.cpp" />
+    <ClCompile Include="Scripts\Dev\Function.cpp">
+      <Filter>Dev</Filter>
+    </ClCompile>
+    <ClCompile Include="Scripts\Dev\InputManager.cpp">
+      <Filter>Dev</Filter>
+    </ClCompile>
+    <ClCompile Include="Scripts\Scene\MainScene.cpp">
+      <Filter>Scene</Filter>
+    </ClCompile>
+    <ClCompile Include="Scripts\Window\Window.cpp">
+      <Filter>Window</Filter>
+    </ClCompile>
+    <ClCompile Include="Scripts\Window\MapMenu.cpp">
+      <Filter>Window</Filter>
+    </ClCompile>
+    <ClCompile Include="Scripts\Window\Menu.cpp">
+      <Filter>Window</Filter>
+    </ClCompile>
+    <ClCompile Include="Scripts\Window\Tab.cpp">
+      <Filter>Window</Filter>
+    </ClCompile>
+    <ClCompile Include="Scripts\Window\Map.cpp">
+      <Filter>Window</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Scripts\Definition.h" />
+    <ClInclude Include="Scripts\Dev\Function.h">
+      <Filter>Dev</Filter>
+    </ClInclude>
+    <ClInclude Include="Scripts\Dev\InputManager.h">
+      <Filter>Dev</Filter>
+    </ClInclude>
+    <ClInclude Include="Scripts\Scene\MainScene.h">
+      <Filter>Scene</Filter>
+    </ClInclude>
+    <ClInclude Include="Scripts\Dev\Singleton.h">
+      <Filter>Dev</Filter>
+    </ClInclude>
+    <ClInclude Include="Scripts\Dev\Point.h">
+      <Filter>Dev</Filter>
+    </ClInclude>
+    <ClInclude Include="Scripts\Dev\Size.h">
+      <Filter>Dev</Filter>
+    </ClInclude>
+    <ClInclude Include="Scripts\Dev\Vector.h">
+      <Filter>Dev</Filter>
+    </ClInclude>
+    <ClInclude Include="Scripts\Window\Window.h">
+      <Filter>Window</Filter>
+    </ClInclude>
+    <ClInclude Include="Scripts\Window\Tab.h">
+      <Filter>Window</Filter>
+    </ClInclude>
+    <ClInclude Include="Scripts\Window\Map.h">
+      <Filter>Window</Filter>
+    </ClInclude>
+    <ClInclude Include="Scripts\Window\MapMenu.h">
+      <Filter>Window</Filter>
+    </ClInclude>
+    <ClInclude Include="Scripts\Window\Menu.h">
+      <Filter>Window</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>

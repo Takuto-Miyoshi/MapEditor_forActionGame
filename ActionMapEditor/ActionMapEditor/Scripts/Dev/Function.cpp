@@ -4,7 +4,7 @@
 
 Function::Function() :
     progressTime( 0.0 ) {
-    timeFreq.QuadPart = 0;
+    timeStart.QuadPart = 0;
     timeFreq.QuadPart = 0;
     timeEnd.QuadPart = 0;
 }
